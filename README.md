@@ -72,7 +72,7 @@ static const Protocol proto[] = {
 
 # Wirering
 
-|Radio Modulie||ESP32/ESP32S2|
+|Radio Module||ESP32/ESP32S2|
 |:-:|:-:|:-:|
 |DATA|--|GPIO22|
 |GND|--|GND|
