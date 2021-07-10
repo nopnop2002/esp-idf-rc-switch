@@ -36,6 +36,8 @@ void transmitter(void* pvParameter)
 	enableTransmit(&RCSwitch, CONFIG_RF_GPIO);
 	ESP_LOGI(TAG, "CONFIG_RF_PROTOCOL=%d", CONFIG_RF_PROTOCOL);
 	setProtocol(&RCSwitch, CONFIG_RF_PROTOCOL);
+	ESP_LOGI(TAG, "CONFIG_RF_REPEAT=%d", CONFIG_RF_REPEAT);
+	setRepeatTransmit(&RCSwitch, CONFIG_RF_REPEAT);
 	ESP_LOGI(TAG, "CONFIG_RF_LENGTH=%d", CONFIG_RF_LENGTH);
 
 	uint32_t sendValue = 1;

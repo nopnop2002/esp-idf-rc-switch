@@ -48,7 +48,7 @@ idf.py flash
 ![config-direction](https://user-images.githubusercontent.com/6020549/125153778-12644200-e191-11eb-98c5-692739a1d6bc.jpg)
 
 On the transmitting side, you can choose the protocol and the number of data bits.
-![config-transmit](https://user-images.githubusercontent.com/6020549/125153790-260fa880-e191-11eb-873b-4b975af293d0.jpg)
+![config-transmit](https://user-images.githubusercontent.com/6020549/125162283-e44b2600-e1c1-11eb-8ab4-0f1250248db8.jpg)
 
 The available protocols are:   
 ```
