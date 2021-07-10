@@ -62,7 +62,7 @@ static const Protocol proto[] = {
   { 320, { 36,  1 }, {  1,  2 }, {  2,  1 }, true }      // protocol 12 (SM5212)
 };
 
-//{pulseLength, syncFactor, zero, one, invertedSignal}
+//{pulseLength, {syncFactor.high, syncFactor.low}, {zero.high, zero.low}, {one.high, one.low}, invertedSignal}
 ```
 
 # Communicat with AtMega/STM32/ESP8266/ESP8285
