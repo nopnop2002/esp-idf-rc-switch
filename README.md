@@ -17,6 +17,7 @@ I ported from [here](https://github.com/sui77/rc-switch).
 I used this:
 
 ![H3V4F-2](https://user-images.githubusercontent.com/6020549/125154180-c36bdc00-e193-11eb-9e89-5934c2db7fae.JPG)
+![H3V4F-3](https://user-images.githubusercontent.com/6020549/125154246-0ded5880-e194-11eb-974b-03232166ab12.JPG)
 
 # Installation for ESP32
 ```
