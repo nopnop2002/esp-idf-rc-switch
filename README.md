@@ -19,6 +19,11 @@ I used this:
 ![H3V4F-2](https://user-images.githubusercontent.com/6020549/125154180-c36bdc00-e193-11eb-9e89-5934c2db7fae.JPG)
 ![H3V4F-3](https://user-images.githubusercontent.com/6020549/125154246-0ded5880-e194-11eb-974b-03232166ab12.JPG)
 
+__Note__   
+As far as I know, there are 5V module and 3.3V module in the receiving module.   
+Only 3.3V modules can be used with the ESP32.   
+
+
 # Installation for ESP32
 ```
 git clone https://github.com/nopnop2002/esp-idf-rc-switch
@@ -64,10 +69,6 @@ static const Protocol proto[] = {
 
 //{pulseLength, {syncFactor.high, syncFactor.low}, {zero.high, zero.low}, {one.high, one.low}, invertedSignal}
 ```
-
-__Note__   
-As far as I know, there are 5V module and 3.3V module in the receiving module.   
-Only 3.3V modules can be used with the ESP32.   
 
 # Communicat with AtMega/STM32/ESP8266/ESP8285
 I used [this](https://github.com/sui77/rc-switch) library on Arduino environment.
