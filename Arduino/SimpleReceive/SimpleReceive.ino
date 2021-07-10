@@ -7,7 +7,7 @@ RCSwitch mySwitch = RCSwitch();
 
 void setup() {
   Serial.begin(115200);
-  mySwitch.enableReceive(0);  // Receiver on interrupt 0 => that is D2
+  mySwitch.enableReceive(0);  // Receiver on interrupt 0 => that is INT0
   Serial.println("mySwich receive start");
 }
 
@@ -21,8 +21,8 @@ void loop() {
       Serial.print("Unknown encoding");
     } else {
    
-      Serial.print("Received ");
-      Serial.print( mySwitch.getReceivedValue() );
+      Serial.print("Received 0x");
+      Serial.print( mySwitch.getReceivedValue(), HEX );
       Serial.print(" / ");
       Serial.print( mySwitch.getReceivedBitlength() );
       Serial.print("bit ");

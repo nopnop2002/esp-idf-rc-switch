@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <math.h>
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
 #include "esp_system.h"
@@ -39,10 +40,18 @@ void transmitter(void* pvParameter)
 
 	uint32_t sendValue = 1;
 	while(1) {
-		ESP_LOGI(TAG, "Sending value is %u", sendValue);
+		ESP_LOGI(TAG, "Sending value is 0x%.02x", sendValue);
 		//send(&RCSwitch, sendValue, 32);
 		send(&RCSwitch, sendValue, CONFIG_RF_LENGTH);
-		sendValue++;
+		// maxdouble is maximum value of CONFIG_RF_LENGTH
+		double maxdouble = pow(2, CONFIG_RF_LENGTH) - 1;
+		uint32_t maxlong = maxdouble;
+		ESP_LOGD(TAG, "maxlong=0x%x", maxlong);
+		if (sendValue == maxlong) {
+			sendValue = 1;
+		} else {
+			sendValue++;
+		}
 		vTaskDelay(pdMS_TO_TICKS(1000));
 	}
 }
