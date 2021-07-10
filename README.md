@@ -70,6 +70,18 @@ static const Protocol proto[] = {
 //{pulseLength, {syncFactor.high, syncFactor.low}, {zero.high, zero.low}, {one.high, one.low}, invertedSignal}
 ```
 
+# Wirering
+
+|Radio Modulie||ESP32/ESP32S2|
+|:-:|:-:|:-:|
+|DATA|--|GPIO22|
+|GND|--|GND|
+|VCC|--|3.3V|
+
+__You can change data pin to any pin using menuconfig.__   
+__However, changing to some pins does not work properly.__
+
+
 # Communicat with AtMega/STM32/ESP8266/ESP8285
 I used [this](https://github.com/sui77/rc-switch) library on Arduino environment.
 
