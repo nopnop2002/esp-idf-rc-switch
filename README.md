@@ -43,7 +43,10 @@ On the transmitting side, you can choose the protocol and the number of data bit
 # Communicat with AtMega/STM32/ESP8266/ESP8285
 I used [this](https://github.com/sui77/rc-switch) library on Arduino environment.
 
+## From ESP32 to UNO
 ![RCSwitch_Send](https://user-images.githubusercontent.com/6020549/125153827-5d7e5500-e191-11eb-8db9-accd41302b1f.jpg)
+
+## From UNO to ESP32
 
 ![RCSwitch_Receive](https://user-images.githubusercontent.com/6020549/125153829-60794580-e191-11eb-952e-65635b412ca8.jpg)
 
