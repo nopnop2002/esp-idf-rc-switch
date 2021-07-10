@@ -14,6 +14,10 @@ I ported from [here](https://github.com/sui77/rc-switch).
 - Intertechno outlets
 - HT6P20X
 
+I used this:
+
+![H3V4F-2](https://user-images.githubusercontent.com/6020549/125154180-c36bdc00-e193-11eb-9e89-5934c2db7fae.JPG)
+
 # Installation for ESP32
 ```
 git clone https://github.com/nopnop2002/esp-idf-rc-switch
