@@ -45,6 +45,21 @@ void transmitter(void* pvParameter)
 
 	uint32_t sendValue = 1;
 	while(1) {
+#if 0
+		sendTriState(&RCSwitch, getCodeWordA("11001", "01000", true));
+		vTaskDelay(pdMS_TO_TICKS(1000));
+		sendTriState(&RCSwitch, getCodeWordA("11001", "01000", false));
+		vTaskDelay(pdMS_TO_TICKS(1000));
+#endif
+
+#if 0
+		sendTriState(&RCSwitch, getCodeWordB(4, 2, true));
+		vTaskDelay(pdMS_TO_TICKS(1000));
+		sendTriState(&RCSwitch, getCodeWordB(4, 2, false));
+		vTaskDelay(pdMS_TO_TICKS(1000));
+#endif
+
+#if 1
 		ESP_LOGI(TAG, "Sending value is 0x%.02x", sendValue);
 		//send(&RCSwitch, sendValue, 32);
 		send(&RCSwitch, sendValue, CONFIG_RF_LENGTH);
@@ -58,6 +73,7 @@ void transmitter(void* pvParameter)
 			sendValue++;
 		}
 		vTaskDelay(pdMS_TO_TICKS(1000));
+#endif
 	}
 }
 #endif

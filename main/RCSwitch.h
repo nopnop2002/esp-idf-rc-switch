@@ -114,7 +114,13 @@ typedef struct {
 	void enableTransmit(RCSWITCH_t * RCSwitch, int nTransmitterPin);
 	void disableTransmit(RCSWITCH_t * RCSwitch);
 
+	char* getCodeWordA(const char* sGroup, const char* sDevice, bool bStatus);
+	char* getCodeWordB(int nAddressCode, int nChannelCode, bool bStatus);
+	char* getCodeWordC(char sFamily, int nGroup, int nDevice, bool bStatus);
+	char* getCodeWordD(char group, int nDevice, bool bStatus);
+	void sendTriState(RCSWITCH_t * RCSwitch, const char* sCodeWord);
 	void send(RCSWITCH_t * RCSwitch, unsigned long code, unsigned int length);
+
 	void transmit(RCSWITCH_t * RCSwitch, HighLow pulses);
 
 #endif /* MAIN_RXB6_RECEIVER_H_ */
