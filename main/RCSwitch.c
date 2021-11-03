@@ -285,57 +285,57 @@ static inline unsigned int diff(int A, int B) {
 }
 
 bool receiveProtocol(RCSWITCH_t * RCSwitch, const int p, unsigned int changeCount) {
-		const Protocol pro = proto[p-1];
+	const Protocol pro = proto[p-1];
 
-		unsigned long code = 0;
-		//Assuming the longer pulse length is the pulse captured in timings[0]
-		const unsigned int syncLengthInPulses =  ((pro.syncFactor.low) > (pro.syncFactor.high)) ? (pro.syncFactor.low) : (pro.syncFactor.high);
-		const unsigned int delay = RCSwitch->timings[0] / syncLengthInPulses;
-		const unsigned int delayTolerance = delay * RCSwitch->nReceiveTolerance / 100;
+	unsigned long code = 0;
+	//Assuming the longer pulse length is the pulse captured in timings[0]
+	const unsigned int syncLengthInPulses =  ((pro.syncFactor.low) > (pro.syncFactor.high)) ? (pro.syncFactor.low) : (pro.syncFactor.high);
+	const unsigned int delay = RCSwitch->timings[0] / syncLengthInPulses;
+	const unsigned int delayTolerance = delay * RCSwitch->nReceiveTolerance / 100;
 
-		/* For protocols that start low, the sync period looks like
-		 *							 _________
-		 * _____________|					|XXXXXXXXXXXX|
-		 *
-		 * |--1st dur--|-2nd dur-|-Start data-|
-		 *
-		 * The 3rd saved duration starts the data.
-		 *
-		 * For protocols that start high, the sync period looks like
-		 *
-		 *	______________
-		 * |							|____________|XXXXXXXXXXXXX|
-		 *
-		 * |-filtered out-|--1st dur--|--Start data--|
-		 *
-		 * The 2nd saved duration starts the data
-		 */
-		const unsigned int firstDataTiming = (pro.invertedSignal) ? (2) : (1);
+	/* For protocols that start low, the sync period looks like
+	 *							 _________
+	 * _____________|					|XXXXXXXXXXXX|
+	 *
+	 * |--1st dur--|-2nd dur-|-Start data-|
+	 *
+	 * The 3rd saved duration starts the data.
+	 *
+	 * For protocols that start high, the sync period looks like
+	 *
+	 *	______________
+	 * |							|____________|XXXXXXXXXXXXX|
+	 *
+	 * |-filtered out-|--1st dur--|--Start data--|
+	 *
+	 * The 2nd saved duration starts the data
+	 */
+	const unsigned int firstDataTiming = (pro.invertedSignal) ? (2) : (1);
 
-		for (unsigned int i = firstDataTiming; i < changeCount - 1; i += 2) {
-				code <<= 1;
-				if (diff(RCSwitch->timings[i], delay * pro.zero.high) < delayTolerance &&
-						diff(RCSwitch->timings[i + 1], delay * pro.zero.low) < delayTolerance) {
-						// zero
-				} else if (diff(RCSwitch->timings[i], delay * pro.one.high) < delayTolerance &&
-									 diff(RCSwitch->timings[i + 1], delay * pro.one.low) < delayTolerance) {
-						// one
-						code |= 1;
-				} else {
-						// Failed
-						return false;
-				}
+	for (unsigned int i = firstDataTiming; i < changeCount - 1; i += 2) {
+		code <<= 1;
+		if (diff(RCSwitch->timings[i], delay * pro.zero.high) < delayTolerance &&
+			diff(RCSwitch->timings[i + 1], delay * pro.zero.low) < delayTolerance) {
+			// zero
+		} else if (diff(RCSwitch->timings[i], delay * pro.one.high) < delayTolerance &&
+							 diff(RCSwitch->timings[i + 1], delay * pro.one.low) < delayTolerance) {
+			// one
+			code |= 1;
+		} else {
+			// Failed
+			return false;
 		}
+	}
 
-		if (changeCount > 7) {		// ignore very short transmissions: no device sends them, so this must be noise
-				RCSwitch->nReceivedValue = code;
-				RCSwitch->nReceivedBitlength = (changeCount - 1) / 2;
-				RCSwitch->nReceivedDelay = delay;
-				RCSwitch->nReceivedProtocol = p;
-				return true;
-		}
+	if (changeCount > 7) {		// ignore very short transmissions: no device sends them, so this must be noise
+		RCSwitch->nReceivedValue = code;
+		RCSwitch->nReceivedBitlength = (changeCount - 1) / 2;
+		RCSwitch->nReceivedDelay = delay;
+		RCSwitch->nReceivedProtocol = p;
+		return true;
+	}
 
-		return false;
+	return false;
 }
 
 
@@ -361,23 +361,23 @@ void handleInterrupt(void* arg)
 			// with roughly the same gap between them).
 			repeatCount++;
 			if (repeatCount == 2) {
-			for(uint8_t i = 1; i <= numProto; i++) {
-				if (receiveProtocol(RCSwitch, i, changeCount)) {
-				// receive succeeded for protocol i
-				break;
+				for(uint8_t i = 1; i <= numProto; i++) {
+					if (receiveProtocol(RCSwitch, i, changeCount)) {
+						// receive succeeded for protocol i
+						break;
+					}
 				}
-			}
-			repeatCount = 0;
+				repeatCount = 0;
 			}
 		}
 		changeCount = 0;
-		}
-		// detect overflow
-		if (changeCount >= RCSWITCH_MAX_CHANGES) {
+	}
+	// detect overflow
+	if (changeCount >= RCSWITCH_MAX_CHANGES) {
 		changeCount = 0;
 		repeatCount = 0;
-		}
+	}
 
-		RCSwitch->timings[changeCount++] = duration;
-		lastTime = time;
+	RCSwitch->timings[changeCount++] = duration;
+	lastTime = time;
 }
