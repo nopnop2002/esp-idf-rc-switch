@@ -6,13 +6,16 @@ This repository can send and receive.
 I ported from [here](https://github.com/sui77/rc-switch).
 
 # Hardware requirements
-315/433MHz AM transmitter and AM receiver with one of the supported chipsets:
-- SC5262 / SC5272
-- HX2262 / HX2272
-- PT2262 / PT2272
-- EV1527 / RT1527 / FP1527 / HS1527
-- Intertechno outlets
-- HT6P20X
+315MHz/433MHz ASK Wireless transmitter/receiver like this.   
+
+-Transmitter   
+H34A-433/H34A-315   
+SYN115   
+
+-Receiver   
+SYN480R   
+LR43B/LR33B   
+H3V3/H3V4/H5V3/H5V4   
 
 I used this:
 
