@@ -42,6 +42,15 @@ idf.py menuconfig
 idf.py flash
 ```
 
+# Installation for ESP32-C3
+```
+git clone https://github.com/nopnop2002/esp-idf-rc-switch
+cd esp-idf-rc-switch
+idf.py set-target esp32c3
+idf.py menuconfig
+idf.py flash
+```
+
 # Configuration
 ![config-main](https://user-images.githubusercontent.com/6020549/125153763-fc568180-e190-11eb-89b4-1aea05542101.jpg)
 ![config-app](https://user-images.githubusercontent.com/6020549/125153764-fe204500-e190-11eb-9cbf-a56ab0faa0ce.jpg)
@@ -72,9 +81,9 @@ static const Protocol proto[] = {
 
 # Wirering
 
-|Radio Module||ESP32/ESP32S2|
+|Radio Module||ESP32|
 |:-:|:-:|:-:|
-|DATA|--|GPIO22|
+|DATA|--|GPIO4|
 |GND|--|GND|
 |VCC|--|3.3V|
 
@@ -91,4 +100,8 @@ I used [this](https://github.com/sui77/rc-switch) library on Arduino environment
 ## From UNO to ESP32
 
 ![RCSwitch_Receive](https://user-images.githubusercontent.com/6020549/125153829-60794580-e191-11eb-952e-65635b412ca8.jpg)
+
+# Using garage door 315/433MHz Remote
+You can control ESP32 using garage door 315/433Mhz remote.   
+![433MHz](https://user-images.githubusercontent.com/6020549/139992538-f1e980fc-7f2c-45b1-ac3b-26f43b9ec481.JPG)
 

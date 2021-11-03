@@ -9,6 +9,7 @@
 
 #define TAG "MAIN"
 
+#if CONFIG_RF_RECEIVER
 void receiver(void* pvParameter)
 {
 	ESP_LOGI(TAG, "Start receiver");
@@ -27,7 +28,9 @@ void receiver(void* pvParameter)
 		}
 	}
 }
+#endif
 
+#if CONFIG_RF_TRANSMITTER
 void transmitter(void* pvParameter)
 {
 	ESP_LOGI(TAG, "Start transmitter");
@@ -57,6 +60,7 @@ void transmitter(void* pvParameter)
 		vTaskDelay(pdMS_TO_TICKS(1000));
 	}
 }
+#endif
 
 void app_main()
 {

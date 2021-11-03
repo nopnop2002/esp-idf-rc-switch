@@ -3,8 +3,7 @@ menu "Application Configuration"
 	config RF_GPIO
 		int "GPIO number to RF data"
 		range 0 46
-		default 22 if IDF_TARGET_ESP32
-		default 35 if IDF_TARGET_ESP32S2
+		default 4
 		help
 			GPIO number (IOxx) to RF data.
 			Some GPIOs are used for other purposes (flash connections, etc.) and cannot be used to MOSI.
