@@ -97,7 +97,8 @@ __However, changing to some pins does not work properly.__
 
 
 # Communicat with AtMega/STM32/ESP8266/ESP8285
-I used [this](https://github.com/sui77/rc-switch) library on Arduino environment.
+I used [this](https://github.com/sui77/rc-switch) library on Arduino environment.   
+Sample code for Arduino environment is attached to the Arduino folder.   
 
 ## From ESP32 to UNO
 ![RCSwitch_Send](https://user-images.githubusercontent.com/6020549/125153827-5d7e5500-e191-11eb-8db9-accd41302b1f.jpg)
