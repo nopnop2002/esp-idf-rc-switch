@@ -11,11 +11,13 @@ I ported from [here](https://github.com/sui77/rc-switch).
 -Transmitter   
 H34A-433/H34A-315   
 SYN115   
+STX882   
 
 -Receiver   
 SYN480R   
 LR43B/LR33B   
 H3V3/H3V4/H5V3/H5V4   
+SRX882/SRX887   
 
 I used this:
 
