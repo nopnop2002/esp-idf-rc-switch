@@ -29,29 +29,11 @@ As far as I know, there are 5V module and 3.3V module in the receiving module.
 __Only 3.3V__ modules can be used with the ESP32.   
 
 
-# Installation for ESP32
+# Installation
 ```
 git clone https://github.com/nopnop2002/esp-idf-rc-switch
 cd esp-idf-rc-switch
-idf.py set-target esp32
-idf.py menuconfig
-idf.py flash
-```
-
-# Installation for ESP32-S2
-```
-git clone https://github.com/nopnop2002/esp-idf-rc-switch
-cd esp-idf-rc-switch
-idf.py set-target esp32s2
-idf.py menuconfig
-idf.py flash
-```
-
-# Installation for ESP32-C3
-```
-git clone https://github.com/nopnop2002/esp-idf-rc-switch
-cd esp-idf-rc-switch
-idf.py set-target esp32c3
+idf.py set-target {esp32/esp32s2/esp32c3}
 idf.py menuconfig
 idf.py flash
 ```
