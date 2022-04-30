@@ -8,12 +8,12 @@ I ported from [here](https://github.com/sui77/rc-switch).
 # Hardware requirements
 315MHz/433MHz ASK Wireless transmitter/receiver like this.   
 
--Transmitter   
+- Transmitter   
 H34A-433/H34A-315   
 SYN115   
 STX882   
 
--Receiver   
+- Receiver   
 H3V3/H3V4/H5V3/H5V4   
 SYN480R   
 LR43B/LR33B   
@@ -33,7 +33,7 @@ __Only 3.3V__ modules can be used with the ESP32.
 ```
 git clone https://github.com/nopnop2002/esp-idf-rc-switch
 cd esp-idf-rc-switch
-idf.py set-target {esp32/esp32s2/esp32c3}
+idf.py set-target {esp32/esp32s2/esp32s3/esp32c3}
 idf.py menuconfig
 idf.py flash
 ```
@@ -78,17 +78,18 @@ __You can change data pin to any pin using menuconfig.__
 __However, changing to some pins does not work properly.__
 
 
-# Communicat with AtMega/STM32/ESP8266/ESP8285
+# Communicat with Arduino Environment
 I used [this](https://github.com/sui77/rc-switch) library on Arduino environment.   
-Sample code for Arduino environment is attached to the Arduino folder.   
+The sample code for the Arduino environment can be found in the ArduinoCode folder.
 
-## From ESP32 to UNO
+### From ESP32 to UNO
 ![RCSwitch_Send](https://user-images.githubusercontent.com/6020549/125153827-5d7e5500-e191-11eb-8db9-accd41302b1f.jpg)
 
-## From UNO to ESP32
+### From UNO to ESP32
 ![RCSwitch_Receive](https://user-images.githubusercontent.com/6020549/125153829-60794580-e191-11eb-952e-65635b412ca8.jpg)
 
 # Using garage door 315/433MHz Remote
 You can control ESP32 using garage door 315/433Mhz remote.   
-![433MHz](https://user-images.githubusercontent.com/6020549/139992538-f1e980fc-7f2c-45b1-ac3b-26f43b9ec481.JPG)
 
+![433MHz](https://user-images.githubusercontent.com/6020549/139992538-f1e980fc-7f2c-45b1-ac3b-26f43b9ec481.JPG)
+![GarageDoor](https://user-images.githubusercontent.com/6020549/166126115-506aa5c7-6fc2-49dd-9a07-53cdb6615e84.jpg)

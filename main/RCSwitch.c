@@ -42,18 +42,18 @@
 #define TAG "RF433"
 
 static const Protocol proto[] = {
-	{ 350, {	1, 31 }, {	1,	3 }, {	3,	1 }, false },	 // protocol 1
-	{ 650, {	1, 10 }, {	1,	2 }, {	2,	1 }, false },	 // protocol 2
-	{ 100, { 30, 71 }, {	4, 11 }, {	9,	6 }, false },	 // protocol 3
-	{ 380, {	1,	6 }, {	1,	3 }, {	3,	1 }, false },	 // protocol 4
-	{ 500, {	6, 14 }, {	1,	2 }, {	2,	1 }, false },	 // protocol 5
-	{ 450, { 23,	1 }, {	1,	2 }, {	2,	1 }, true },		 // protocol 6 (HT6P20B)
-	{ 150, {	2, 62 }, {	1,	6 }, {	6,	1 }, false },		 // protocol 7 (HS2303-PT, i. e. used in AUKEY Remote)
-	{ 200, {	3, 130}, {	7, 16 }, {	3,	16}, false},		 // protocol 8 Conrad RS-200 RX
-	{ 200, { 130, 7 }, {	16, 7 }, { 16,	3 }, true},			 // protocol 9 Conrad RS-200 TX
-	{ 365, { 18,	1 }, {	3,	1 }, {	1,	3 }, true },		 // protocol 10 (1ByOne Doorbell)
-	{ 270, { 36,	1 }, {	1,	2 }, {	2,	1 }, true },		 // protocol 11 (HT12E)
-	{ 320, { 36,	1 }, {	1,	2 }, {	2,	1 }, true }			 // protocol 12 (SM5212)
+	{ 350, {	1, 31 }, {	1,	3 }, {	3,	1 }, false },	// protocol 1
+	{ 650, {	1, 10 }, {	1,	2 }, {	2,	1 }, false },	// protocol 2
+	{ 100, { 30, 71 }, {	4, 11 }, {	9,	6 }, false },	// protocol 3
+	{ 380, {	1,	6 }, {	1,	3 }, {	3,	1 }, false },	// protocol 4
+	{ 500, {	6, 14 }, {	1,	2 }, {	2,	1 }, false },	// protocol 5
+	{ 450, { 23,	1 }, {	1,	2 }, {	2,	1 }, true },	// protocol 6 (HT6P20B)
+	{ 150, {	2, 62 }, {	1,	6 }, {	6,	1 }, false },	// protocol 7 (HS2303-PT, i. e. used in AUKEY Remote)
+	{ 200, {	3, 130}, {	7, 16 }, {	3,	16}, false},	// protocol 8 Conrad RS-200 RX
+	{ 200, { 130, 7 }, {	16, 7 }, { 16,	3 }, true},		// protocol 9 Conrad RS-200 TX
+	{ 365, { 18,	1 }, {	3,	1 }, {	1,	3 }, true },	// protocol 10 (1ByOne Doorbell)
+	{ 270, { 36,	1 }, {	1,	2 }, {	2,	1 }, true },	// protocol 11 (HT12E)
+	{ 320, { 36,	1 }, {	1,	2 }, {	2,	1 }, true }		// protocol 12 (SM5212)
 };
 
 enum {
@@ -123,7 +123,8 @@ void setReceiveTolerance(RCSWITCH_t * RCSwitch, int nPercent) {
 void enableTransmit(RCSWITCH_t * RCSwitch, int nTransmitterPin) {
 	RCSwitch->nTransmitterPin = nTransmitterPin;
 	//pinMode(this->nTransmitterPin, OUTPUT);
-	gpio_pad_select_gpio( RCSwitch->nTransmitterPin );
+	//gpio_pad_select_gpio( RCSwitch->nTransmitterPin );
+	gpio_reset_pin( RCSwitch->nTransmitterPin );
 	gpio_set_direction( RCSwitch->nTransmitterPin, GPIO_MODE_OUTPUT );
 }
 
@@ -283,30 +284,30 @@ char* getCodeWordD(char sGroup, int nDevice, bool bStatus) {
 }
 
 /**
- * @param sCodeWord   a tristate code word consisting of the letter 0, 1, F
+ * @param sCodeWord		a tristate code word consisting of the letter 0, 1, F
  */
 void sendTriState(RCSWITCH_t * RCSwitch, const char* sCodeWord) {
-  // turn the tristate code word into the corresponding bit pattern, then send it
-  unsigned long code = 0;
-  unsigned int length = 0;
-  for (const char* p = sCodeWord; *p; p++) {
-    code <<= 2L;
-    switch (*p) {
-      case '0':
-        // bit pattern 00
-        break;
-      case 'F':
-        // bit pattern 01
-        code |= 1L;
-        break;
-      case '1':
-        // bit pattern 11
-        code |= 3L;
-        break;
-    }
-    length += 2;
-  }
-  send(RCSwitch, code, length);
+	// turn the tristate code word into the corresponding bit pattern, then send it
+	unsigned long code = 0;
+	unsigned int length = 0;
+	for (const char* p = sCodeWord; *p; p++) {
+		code <<= 2L;
+		switch (*p) {
+			case '0':
+				// bit pattern 00
+				break;
+			case 'F':
+				// bit pattern 01
+				code |= 1L;
+				break;
+			case '1':
+				// bit pattern 11
+				code |= 3L;
+				break;
+		}
+		length += 2;
+	}
+	send(RCSwitch, code, length);
 }
 
 /**
@@ -347,6 +348,7 @@ void send(RCSWITCH_t * RCSwitch, unsigned long code, unsigned int length) {
 	}
 }
 
+
 /**
  * Transmit a single high-low pulse.
  */
@@ -361,9 +363,11 @@ void transmit(RCSWITCH_t * RCSwitch, HighLow pulses) {
 	delayMicroseconds( this->protocol.pulseLength * pulses.low);
 #endif
 	gpio_set_level(RCSwitch->nTransmitterPin, firstLogicLevel );
-	ets_delay_us(RCSwitch->protocol.pulseLength * pulses.high);
+	//ets_delay_us(RCSwitch->protocol.pulseLength * pulses.high);
+	esp_rom_delay_us(RCSwitch->protocol.pulseLength * pulses.high);
 	gpio_set_level(RCSwitch->nTransmitterPin, secondLogicLevel);
-	ets_delay_us(RCSwitch->protocol.pulseLength * pulses.low);
+	//ets_delay_us(RCSwitch->protocol.pulseLength * pulses.low);
+	esp_rom_delay_us(RCSwitch->protocol.pulseLength * pulses.low);
 }
 
 

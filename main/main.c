@@ -21,14 +21,14 @@ void receiver(void* pvParameter)
 	while(1) {
 		if (available(&RCSwitch)) {
 			ESP_LOGI(TAG, "Received %lu / %dbit Protocol: %d", 
-			getReceivedValue(&RCSwitch), getReceivedBitlength(&RCSwitch), getReceivedProtocol(&RCSwitch));
+				getReceivedValue(&RCSwitch), getReceivedBitlength(&RCSwitch), getReceivedProtocol(&RCSwitch));
 			resetAvailable(&RCSwitch);
 		} else {
 			vTaskDelay(1);
 		}
-	}
+	} // end while
 }
-#endif
+#endif // CONFIG_RF_RECEIVER
 
 #if CONFIG_RF_TRANSMITTER
 void transmitter(void* pvParameter)
@@ -74,9 +74,9 @@ void transmitter(void* pvParameter)
 		}
 		vTaskDelay(pdMS_TO_TICKS(1000));
 #endif
-	}
+	} // end while
 }
-#endif
+#endif // CONFIG_RF_TRANSMITTER
 
 void app_main()
 {

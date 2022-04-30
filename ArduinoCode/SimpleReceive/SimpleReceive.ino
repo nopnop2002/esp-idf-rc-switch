@@ -1,12 +1,21 @@
 /*
   RF_Sniffer - receive RF codes.
+  
+  https://github.com/sui77/rc-switch/
 */
 
 #include <RCSwitch.h> // https://github.com/sui77/rc-switch
+
 RCSwitch mySwitch = RCSwitch();
 
 void setup() {
   Serial.begin(115200);
+
+  // VCC  : 3.3V
+  // GND  : GND
+  // Data : D2
+  // ANT  : in between the two headers!
+
   mySwitch.enableReceive(0);  // Receiver on interrupt 0 => that is INT0
   Serial.println("mySwich receive start");
 }
