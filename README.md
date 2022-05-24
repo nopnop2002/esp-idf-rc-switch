@@ -1,5 +1,5 @@
 # esp-idf-rc-switch
-433/315Mhz RF driver for esp-idf.   
+315/433MHz ASK RF driver for esp-idf.   
 There are several repositories available for esp-idf, but I couldn't find a submittable library.   
 This repository can send and receive.   
 
