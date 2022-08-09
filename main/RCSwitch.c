@@ -36,6 +36,7 @@
 #include "esp_system.h"
 #include "esp_log.h"
 #include "driver/gpio.h"
+#include "esp_timer.h" // for esp-idf v5
 
 #include "RCSwitch.h"
 
