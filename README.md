@@ -5,6 +5,9 @@ This repository can send and receive.
 
 I ported from [here](https://github.com/sui77/rc-switch).
 
+# Software requirements
+esp-idf v4.4/v5.0.   
+
 # Hardware requirements
 315MHz/433MHz ASK Wireless transmitter/receiver like this.   
 
