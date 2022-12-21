@@ -29,7 +29,7 @@ I used this:
 
 __Note__   
 As far as I know, there are 5V module and 3.3V module in the receiving module.   
-__Only 3.3V__ modules can be used with the ESP32.   
+__Only 3.3V modules can be used with the ESP32.__   
 
 
 # Installation
