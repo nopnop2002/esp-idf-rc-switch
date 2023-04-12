@@ -78,7 +78,6 @@ static const Protocol proto[] = {
 |VCC|--|3.3V|
 
 __You can change data pin to any pin using menuconfig.__   
-__However, changing to some pins does not work properly.__
 
 
 # Communicat with Arduino Environment
@@ -93,7 +92,7 @@ The sample code for the Arduino environment can be found in the ArduinoCode fold
 
 # Using garage door 315/433MHz Remote
 You can control ESP32 using garage door 315/433Mhz remote.   
-
+You can buy it on AliExpress or eBay for about $3.   
 ![433MHz](https://user-images.githubusercontent.com/6020549/139992538-f1e980fc-7f2c-45b1-ac3b-26f43b9ec481.JPG)
 
 Build the firmware as Receiver.   
