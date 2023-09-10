@@ -7,7 +7,7 @@
 
 #include "RCSwitch.h"
 
-#define TAG "MAIN"
+static const char *TAG = "MAIN";
 
 #if CONFIG_RF_RECEIVER
 void receiver(void* pvParameter)

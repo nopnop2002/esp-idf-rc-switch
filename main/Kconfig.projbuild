@@ -1,8 +1,17 @@
 menu "Application Configuration"
 
+	config GPIO_RANGE_MAX
+		int
+		default 33 if IDF_TARGET_ESP32
+		default 46 if IDF_TARGET_ESP32S2
+		default 48 if IDF_TARGET_ESP32S3
+		default 18 if IDF_TARGET_ESP32C2
+		default 19 if IDF_TARGET_ESP32C3
+		default 30 if IDF_TARGET_ESP32C6
+
 	config RF_GPIO
 		int "GPIO number to RF data"
-		range 0 46
+		range 0 GPIO_RANGE_MAX
 		default 4
 		help
 			GPIO number (IOxx) to RF data.
@@ -12,7 +21,7 @@ menu "Application Configuration"
 
 	choice RF_DIRECTION
 		prompt "Communication direction"
-		default Receiver
+		default RF_RECEIVER
 		help
 			Select Communication direction.
 		config RF_RECEIVER
