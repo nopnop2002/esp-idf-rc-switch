@@ -6,7 +6,9 @@ This repository can send and receive.
 I ported from [here](https://github.com/sui77/rc-switch).
 
 # Software requirements
-esp-idf v4.4/v5.0.   
+ESP-IDF V4.4/V5.x.   
+ESP-IDF V5.0 is required when using ESP32-C2.   
+ESP-IDF V5.1 is required when using ESP32-C6.   
 
 # Hardware requirements
 315MHz/433MHz ASK Wireless transmitter/receiver like this.   
