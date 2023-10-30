@@ -38,7 +38,7 @@ __Only 3.3V modules can be used with the ESP32.__
 ```
 git clone https://github.com/nopnop2002/esp-idf-rc-switch
 cd esp-idf-rc-switch
-idf.py set-target {esp32/esp32s2/esp32s3/esp32c3}
+idf.py set-target {esp32/esp32s2/esp32s3/esp32c2/esp32c3/esp32c6}
 idf.py menuconfig
 idf.py flash
 ```
