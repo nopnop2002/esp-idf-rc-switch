@@ -101,8 +101,5 @@ Build the firmware as Receiver.
 Fire the RF using the RF remote control.   
 ![GarageDoor](https://user-images.githubusercontent.com/6020549/166126115-506aa5c7-6fc2-49dd-9a07-53cdb6615e84.jpg)
 
-# Reference
-
-https://github.com/nopnop2002/esp-idf-web-rc-switch
 
 
