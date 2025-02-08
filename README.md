@@ -101,6 +101,13 @@ Build the firmware as Receiver.
 Fire the RF using the RF remote control.   
 ![GarageDoor](https://user-images.githubusercontent.com/6020549/166126115-506aa5c7-6fc2-49dd-9a07-53cdb6615e84.jpg)
 
+# Using USB Remote Control Switch
+We can obtain products that turn USB on/off with a remote control.   
+Both of these use a frequency of 433MHz.   
+Using these, you can turn on/off the USB device from the ESP32.   
+The protocols and codes used differ depending on the product, so you need to check them in advance.   
+You can use this project to explore the prototype here and the code.   
+![Image](https://github.com/user-attachments/assets/88d1a4d8-c98b-44c4-b589-0b053ff2534b)
 
 
 # How to use this component in your project   
