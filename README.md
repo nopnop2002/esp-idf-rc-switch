@@ -43,10 +43,10 @@ idf.py flash
 ```
 
 # Configuration
-![Image](https://github.com/user-attachments/assets/4b96b125-dd33-4640-8203-5b7e0e1529c5)
+![Image](https://github.com/user-attachments/assets/dfa2aaa4-2c87-4f91-ab79-7b16797ec635)
 
 ## Application Setting
-![Image](https://github.com/user-attachments/assets/dfa2aaa4-2c87-4f91-ab79-7b16797ec635)
+![Image](https://github.com/user-attachments/assets/4b96b125-dd33-4640-8203-5b7e0e1529c5)
 
 ## Radio Setting
 ![Image](https://github.com/user-attachments/assets/86aea878-7089-413a-b32b-159c993014a5)
