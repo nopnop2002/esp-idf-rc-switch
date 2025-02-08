@@ -30,8 +30,8 @@ I used this:
 ![H3V4F-3](https://user-images.githubusercontent.com/6020549/125154246-0ded5880-e194-11eb-974b-03232166ab12.JPG)
 
 __Note__   
-As far as I know, there are 5V module and 3.3V module in the receiving module.   
-__Only 3.3V modules can be used with the ESP32.__   
+As far as I know, there are 5V-only modules, 3.3V-only modules, and 3.3V/5V dual-purpose modules for receiving modules.   
+__5V-only modules cannot be used with ESP32.__
 
 
 # Installation
