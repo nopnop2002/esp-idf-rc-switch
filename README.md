@@ -43,13 +43,13 @@ idf.py flash
 ```
 
 # Configuration
-![Image](https://github.com/user-attachments/assets/dfa2aaa4-2c87-4f91-ab79-7b16797ec635)
+![Image](https://github.com/user-attachments/assets/125fbaab-3e1a-4a71-ad7c-83eff94a5ba9)
 
-## Application Setting
-![Image](https://github.com/user-attachments/assets/4b96b125-dd33-4640-8203-5b7e0e1529c5)
+## For Receiver
+![Image](https://github.com/user-attachments/assets/fd511b4e-5ab4-41c4-8800-2575435c130b)
 
-## Radio Setting
-![Image](https://github.com/user-attachments/assets/86aea878-7089-413a-b32b-159c993014a5)
+## For Transmitter
+![Image](https://github.com/user-attachments/assets/187795ca-754d-4c3d-986c-dc48396207cf)
 
 The available protocols are:   
 ```
