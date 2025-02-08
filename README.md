@@ -43,12 +43,13 @@ idf.py flash
 ```
 
 # Configuration
-![config-main](https://user-images.githubusercontent.com/6020549/125153763-fc568180-e190-11eb-89b4-1aea05542101.jpg)
-![config-app](https://user-images.githubusercontent.com/6020549/125153764-fe204500-e190-11eb-9cbf-a56ab0faa0ce.jpg)
-![config-direction](https://user-images.githubusercontent.com/6020549/125153778-12644200-e191-11eb-98c5-692739a1d6bc.jpg)
+![Image](https://github.com/user-attachments/assets/4b96b125-dd33-4640-8203-5b7e0e1529c5)
 
-On the transmitting side, you can choose the protocol and the number of data bits.
-![config-transmit](https://user-images.githubusercontent.com/6020549/125162283-e44b2600-e1c1-11eb-8ab4-0f1250248db8.jpg)
+## Application Setting
+![Image](https://github.com/user-attachments/assets/dfa2aaa4-2c87-4f91-ab79-7b16797ec635)
+
+## Radio Setting
+![Image](https://github.com/user-attachments/assets/86aea878-7089-413a-b32b-159c993014a5)
 
 The available protocols are:   
 ```
