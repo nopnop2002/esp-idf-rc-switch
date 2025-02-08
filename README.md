@@ -109,6 +109,7 @@ The protocols, number of bits, and codes used differ depending on the product, s
 You can use this project to find out what protocols, bit depths, and codes they use.   
 ![Image](https://github.com/user-attachments/assets/88d1a4d8-c98b-44c4-b589-0b053ff2534b)
 
+You can turn USB on/off by sending the same protocol, number of bits, and code.   
 - Products on the left
 ```
 I (5260) MAIN: Received 16065448 / 24bit Protocol: 1
