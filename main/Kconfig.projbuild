@@ -1,24 +1,5 @@
 menu "Application Configuration"
 
-	config GPIO_RANGE_MAX
-		int
-		default 33 if IDF_TARGET_ESP32
-		default 46 if IDF_TARGET_ESP32S2
-		default 48 if IDF_TARGET_ESP32S3
-		default 18 if IDF_TARGET_ESP32C2
-		default 19 if IDF_TARGET_ESP32C3
-		default 30 if IDF_TARGET_ESP32C6
-
-	config RF_GPIO
-		int "GPIO number to RF data"
-		range 0 GPIO_RANGE_MAX
-		default 4
-		help
-			GPIO number (IOxx) to RF data.
-			Some GPIOs are used for other purposes (flash connections, etc.) and cannot be used to MOSI.
-			On the ESP32, GPIOs 35-39 are input-only so cannot be used as outputs.
-			On the ESP32-S2, GPIO 46 is input-only so cannot be used as outputs.
-
 	choice RF_DIRECTION
 		prompt "Communication direction"
 		default RF_RECEIVER
@@ -34,28 +15,5 @@ menu "Application Configuration"
 				Execute Transmitter.
 	endchoice
 
-	config RF_PROTOCOL
-		depends on RF_TRANSMITTER
-		int "Sets the protocol to send"
-		range 1 12
-		default 1
-		help
-			Sets the protocol to send, from a list of predefined protocols.
-
-	config RF_LENGTH
-		depends on RF_TRANSMITTER
-		int "Sets the bit length to send"
-		range 8 32
-		default 32
-		help
-			Set the bit length to send.
-
-	config RF_REPEAT
-		depends on RF_TRANSMITTER
-		int "Set the number of repeat transmissions"
-		range 1 10
-		default 10
-		help
-			Set the number of repeat transmissions.
 
 endmenu
