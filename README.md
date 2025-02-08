@@ -38,7 +38,6 @@ __Only 3.3V modules can be used with the ESP32.__
 ```
 git clone https://github.com/nopnop2002/esp-idf-rc-switch
 cd esp-idf-rc-switch
-idf.py set-target {esp32/esp32s2/esp32s3/esp32c2/esp32c3/esp32c6}
 idf.py menuconfig
 idf.py flash
 ```
@@ -102,4 +101,30 @@ Fire the RF using the RF remote control.
 ![GarageDoor](https://user-images.githubusercontent.com/6020549/166126115-506aa5c7-6fc2-49dd-9a07-53cdb6615e84.jpg)
 
 
+
+# How to use this component in your project   
+Create idf_component.yml in the same directory as main.c.   
+```
+YourProject --+-- CMakeLists.txt
+              +-- main --+-- main.c
+                         +-- CMakeLists.txt
+                         +-- idf_component.yml
+```
+
+Contents of idf_component.yml.
+```
+dependencies:
+  nopnop2002/RCSwitch:
+    path: components/RCSwitch/
+    git: https://github.com/nopnop2002/esp-idf-rc-switch.git
+```
+
+When you build a projects esp-idf will automaticly fetch repository to managed_components dir and link with your code.   
+```
+YourProject --+-- CMakeLists.txt
+              +-- main --+-- main.c
+              |          +-- CMakeLists.txt
+              |          +-- idf_component.yml
+              +-- managed_components ----- nopnop2002__RCSwitch
+```
 
