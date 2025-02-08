@@ -103,7 +103,7 @@ Fire the RF using the RF remote control.
 
 # Using USB Remote Control Switch
 We can obtain products that turn USB on/off with a remote control about $4.   
-Both of these use a frequency of 433MHz.   
+Both of these use a frequency of 433MHz radio signal.   
 Using these, you can turn on/off the USB device from the ESP32.   
 The protocols, number of bits, and codes used differ depending on the product, so please check in advance.   
 You can use this project to find out what protocols, bit depths, and codes they use.   
