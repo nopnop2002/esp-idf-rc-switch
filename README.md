@@ -106,7 +106,7 @@ We can obtain products that turn USB on/off with a remote control.
 Both of these use a frequency of 433MHz.   
 Using these, you can turn on/off the USB device from the ESP32.   
 The protocols and codes used differ depending on the product, so you need to check them in advance.   
-You can use this project to explore the prototype here and the code.   
+You can use this project to explore the protocols and codes they use.   
 ![Image](https://github.com/user-attachments/assets/88d1a4d8-c98b-44c4-b589-0b053ff2534b)
 
 
