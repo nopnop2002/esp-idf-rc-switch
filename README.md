@@ -11,7 +11,7 @@ ESP-IDF V5.0 is required when using ESP32-C2.
 ESP-IDF V5.1 is required when using ESP32-C6.   
 
 # Hardware requirements
-315MHz/433MHz ASK Wireless transmitter/receiver like this.   
+This project supports these wireless transceivers.   
 
 - Transmitter   
 H34A-433/H34A-315   
