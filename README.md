@@ -105,9 +105,26 @@ Fire the RF using the RF remote control.
 We can obtain products that turn USB on/off with a remote control.   
 Both of these use a frequency of 433MHz.   
 Using these, you can turn on/off the USB device from the ESP32.   
-The protocols and codes used differ depending on the product, so you need to check them in advance.   
-You can use this project to explore the protocols and codes they use.   
+The protocols, number of bits, and codes used differ depending on the product, so please check in advance.   
+You can use this project to find out what protocols, bit depths, and codes they use.   
 ![Image](https://github.com/user-attachments/assets/88d1a4d8-c98b-44c4-b589-0b053ff2534b)
+
+- Products on the left
+```
+I (5260) MAIN: Received 16065448 / 24bit Protocol: 1
+I (5360) MAIN: Received 16065448 / 24bit Protocol: 1
+I (6400) MAIN: Received 16065444 / 24bit Protocol: 1
+I (6500) MAIN: Received 16065444 / 24bit Protocol: 1
+I (6600) MAIN: Received 16065444 / 24bit Protocol: 1
+```
+
+- Products on the right
+```
+I (30320) MAIN: Received 1761060 / 24bit Protocol: 1
+I (30410) MAIN: Received 1761060 / 24bit Protocol: 1
+I (30500) MAIN: Received 1761060 / 24bit Protocol: 1
+I (30600) MAIN: Received 1761060 / 24bit Protocol: 1
+```
 
 
 # How to use this component in your project   
