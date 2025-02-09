@@ -125,7 +125,6 @@ I (30410) MAIN: Received 1761060 / 24bit Protocol: 1
 I (30500) MAIN: Received 1761060 / 24bit Protocol: 1
 I (30600) MAIN: Received 1761060 / 24bit Protocol: 1
 ```
-Some example project is [here](https://github.com/nopnop2002/esp-idf-usb-switch).   
 
 
 # How to use this component in your project   
@@ -154,3 +153,6 @@ YourProject --+-- CMakeLists.txt
               +-- managed_components ----- nopnop2002__RCSwitch
 ```
 
+# Reference
+Some example project using USB Remote Control Switch.   
+https://github.com/nopnop2002/esp-idf-usb-switch
