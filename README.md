@@ -13,12 +13,12 @@ ESP-IDF V4.4 release branch reached EOL in July 2024.
 This project supports these wireless transceivers.   
 
 - Transmitter   
-H34A-433/H34A-315   
+H34A-315/H34A-433   
 SYN115   
 STX882   
 
 - Receiver   
-H3V3/H3V4/H5V3/H5V4   
+H3V3/H3V4   
 SYN480R   
 LR43B/LR33B   
 SRX882/SRX887   
