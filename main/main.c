@@ -1,5 +1,7 @@
 #include <stdio.h>
-#include <math.h>
+#include <inttypes.h>
+#include <string.h>
+#include <limits.h>
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
 #include "esp_system.h"
@@ -60,14 +62,10 @@ void transmitter(void* pvParameter)
 #endif
 
 #if 1
-		ESP_LOGI(TAG, "Sending value is 0x%.02x", sendValue);
-		//send(&RCSwitch, sendValue, 32);
-		send(&RCSwitch, sendValue, CONFIG_RF_LENGTH);
-		// maxdouble is maximum value of CONFIG_RF_LENGTH
-		double maxdouble = pow(2, CONFIG_RF_LENGTH) - 1;
-		uint32_t maxlong = maxdouble;
-		ESP_LOGD(TAG, "maxlong=0x%x", maxlong);
-		if (sendValue == maxlong) {
+		ESP_LOGI(TAG, "Sending value is 0x%"PRIx32, sendValue);
+		//sendCode(&RCSwitch, sendValue, 32);
+		sendCode(&RCSwitch, sendValue, CONFIG_RF_LENGTH);
+		if (sendValue == ULONG_MAX) {
 			sendValue = 1;
 		} else {
 			sendValue++;

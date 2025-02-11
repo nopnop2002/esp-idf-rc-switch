@@ -119,7 +119,7 @@ typedef struct {
 	char* getCodeWordC(char sFamily, int nGroup, int nDevice, bool bStatus);
 	char* getCodeWordD(char group, int nDevice, bool bStatus);
 	void sendTriState(RCSWITCH_t * RCSwitch, const char* sCodeWord);
-	void send(RCSWITCH_t * RCSwitch, unsigned long code, unsigned int length);
+	void sendCode(RCSWITCH_t * RCSwitch, unsigned long code, unsigned int length);
 
 	void transmit(RCSWITCH_t * RCSwitch, HighLow pulses);
 

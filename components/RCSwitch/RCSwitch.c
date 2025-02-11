@@ -119,7 +119,7 @@ void setReceiveTolerance(RCSWITCH_t * RCSwitch, int nPercent) {
 /**
  * Enable transmissions
  *
- * @param nTransmitterPin	 Arduino Pin to which the sender is connected to
+ * @param nTransmitterPin Arduino Pin to which the sender is connected to
  */
 void enableTransmit(RCSWITCH_t * RCSwitch, int nTransmitterPin) {
 	RCSwitch->nTransmitterPin = nTransmitterPin;
@@ -308,7 +308,7 @@ void sendTriState(RCSWITCH_t * RCSwitch, const char* sCodeWord) {
 		}
 		length += 2;
 	}
-	send(RCSwitch, code, length);
+	sendCode(RCSwitch, code, length);
 }
 
 /**
@@ -316,7 +316,7 @@ void sendTriState(RCSWITCH_t * RCSwitch, const char* sCodeWord) {
  * bits are sent from MSB to LSB, i.e., first the bit at position length-1,
  * then the bit at position length-2, and so on, till finally the bit at position 0.
  */
-void send(RCSWITCH_t * RCSwitch, unsigned long code, unsigned int length) {
+void sendCode(RCSWITCH_t * RCSwitch, unsigned long code, unsigned int length) {
 	ESP_LOGD(TAG, "RCSwitch->nTransmitterPin=%d", RCSwitch->nTransmitterPin);
 	if (RCSwitch->nTransmitterPin == -1)
 		return;
@@ -498,7 +498,7 @@ bool receiveProtocol(RCSWITCH_t * RCSwitch, const int p, unsigned int changeCoun
 			diff(RCSwitch->timings[i + 1], delay * pro.zero.low) < delayTolerance) {
 			// zero
 		} else if (diff(RCSwitch->timings[i], delay * pro.one.high) < delayTolerance &&
-							 diff(RCSwitch->timings[i + 1], delay * pro.one.low) < delayTolerance) {
+					diff(RCSwitch->timings[i + 1], delay * pro.one.low) < delayTolerance) {
 			// one
 			code |= 1;
 		} else {
@@ -507,7 +507,7 @@ bool receiveProtocol(RCSWITCH_t * RCSwitch, const int p, unsigned int changeCoun
 		}
 	}
 
-	if (changeCount > 7) {		// ignore very short transmissions: no device sends them, so this must be noise
+	if (changeCount > 7) { // ignore very short transmissions: no device sends them, so this must be noise
 		RCSwitch->nReceivedValue = code;
 		RCSwitch->nReceivedBitlength = (changeCount - 1) / 2;
 		RCSwitch->nReceivedDelay = delay;
