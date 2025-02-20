@@ -24,8 +24,9 @@ LR43B/LR33B
 SRX882/SRX887   
 
 I used these transceivers.
-![H3V4F-2](https://user-images.githubusercontent.com/6020549/125154180-c36bdc00-e193-11eb-9e89-5934c2db7fae.JPG)
-![H3V4F-3](https://user-images.githubusercontent.com/6020549/125154246-0ded5880-e194-11eb-974b-03232166ab12.JPG)
+From left: H3V4F, H34A, SYN480, SYN115   
+![Image](https://github.com/user-attachments/assets/e0a27e32-cebe-457a-aaa8-11da5f5dcc31)   
+![Image](https://github.com/user-attachments/assets/ef3ad73b-3aec-4a89-b507-498fb9ddbcc7)   
 
 # Installation
 ```
