@@ -89,7 +89,7 @@ The sample code for the Arduino environment can be found in the ArduinoCode fold
 # Using garage door 315/433MHz Remote
 You can control ESP32 using garage door 315/433Mhz remote.   
 You can buy it on AliExpress or eBay for about $3.   
-![433MHz](https://user-images.githubusercontent.com/6020549/139992538-f1e980fc-7f2c-45b1-ac3b-26f43b9ec481.JPG)
+![Image](https://github.com/user-attachments/assets/5f89427a-b4e4-45d2-95df-f3e011bdf66c)
 
 Build the firmware as Receiver.   
 Fire the RF using the RF remote control.   
