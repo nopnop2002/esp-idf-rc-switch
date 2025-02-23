@@ -121,6 +121,9 @@ I (30500) MAIN: Received 1761060 / 24bit Protocol: 1
 I (30600) MAIN: Received 1761060 / 24bit Protocol: 1
 ```
 
+Some example project using USB Remote Control Switch.   
+https://github.com/nopnop2002/esp-idf-usb-switch
+
 
 # How to use this component in your project   
 Create idf_component.yml in the same directory as main.c.   
@@ -149,5 +152,5 @@ YourProject --+-- CMakeLists.txt
 ```
 
 # Reference
-Some example project using USB Remote Control Switch.   
-https://github.com/nopnop2002/esp-idf-usb-switch
+Some example project using Garade door 315MHz/433MHz Remote.   
+https://github.com/nopnop2002/esp-idf-tea5767/tree/main/withGaradeDoorRemote
