@@ -95,6 +95,9 @@ Build the firmware as Receiver.
 Fire the RF using the RF remote control.   
 ![GarageDoor](https://user-images.githubusercontent.com/6020549/166126115-506aa5c7-6fc2-49dd-9a07-53cdb6615e84.jpg)
 
+Some example project using Garade door 315MHz/433MHz Remote.   
+https://github.com/nopnop2002/esp-idf-tea5767/tree/main/withGaradeDoorRemote
+
 # Using USB Remote Control Switch
 We can obtain products that turn USB on/off with a remote control about $4.   
 Both of these use a frequency of 433MHz radio signal.   
@@ -150,7 +153,3 @@ YourProject --+-- CMakeLists.txt
               |          +-- idf_component.yml
               +-- managed_components ----- nopnop2002__RCSwitch
 ```
-
-# Reference
-Some example project using Garade door 315MHz/433MHz Remote.   
-https://github.com/nopnop2002/esp-idf-tea5767/tree/main/withGaradeDoorRemote
