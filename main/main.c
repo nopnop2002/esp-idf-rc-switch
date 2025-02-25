@@ -18,7 +18,7 @@ void receiver(void* pvParameter)
 	RCSWITCH_t RCSwitch;
 	initSwich(&RCSwitch);
 	//enableReceive(&RCSwitch, 22);
-	enableReceive(&RCSwitch, CONFIG_RF_GPIO);
+	ESP_ERROR_CHECK(enableReceive(&RCSwitch, CONFIG_RF_GPIO));
 
 	while(1) {
 		if (available(&RCSwitch)) {

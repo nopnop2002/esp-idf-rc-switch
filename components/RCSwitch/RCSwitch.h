@@ -91,8 +91,8 @@ typedef struct {
 	void send(const char* sCodeWord);
 #endif
 
-	void enableReceive(RCSWITCH_t * RCSwitch, int interrupt);
-	void enableReceiveInternal(RCSWITCH_t * RCSwitch);
+	esp_err_t enableReceive(RCSWITCH_t * RCSwitch, int interrupt);
+	esp_err_t enableReceiveInternal(RCSWITCH_t * RCSwitch);
 	void disableReceive(RCSWITCH_t * RCSwitch);
 	bool available(RCSWITCH_t * RCSwitch);
 	void resetAvailable(RCSWITCH_t * RCSwitch);

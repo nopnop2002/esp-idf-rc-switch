@@ -30,6 +30,7 @@
 */
 
 #include <stdio.h>
+#include <inttypes.h>
 #include <string.h>
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
@@ -40,7 +41,7 @@
 
 #include "RCSwitch.h"
 
-#define TAG "RF433"
+static const char *TAG = "RF433";
 
 static const Protocol proto[] = {
   { 350, {  1, 31 }, {  1,  3 }, {  3,  1 }, false },    // protocol 1
@@ -375,19 +376,18 @@ void transmit(RCSWITCH_t * RCSwitch, HighLow pulses) {
 /**
  * Enable receiving data
  */
-void enableReceive(RCSWITCH_t * RCSwitch, int interrupt) {
+esp_err_t enableReceive(RCSWITCH_t * RCSwitch, int interrupt) {
 	RCSwitch->nReceiverInterrupt = interrupt;
-	enableReceiveInternal(RCSwitch);
+	return (enableReceiveInternal(RCSwitch));
 }
 
 #define ESP_INTR_FLAG_DEFAULT 0
 
 
-void enableReceiveInternal(RCSWITCH_t * RCSwitch) {
+esp_err_t enableReceiveInternal(RCSWITCH_t * RCSwitch) {
 	uint64_t gpio_pin_sel = (1ULL<<RCSwitch->nReceiverInterrupt);
 	ESP_LOGI(TAG, "RCSwitch->nReceiverInterrupt=%d gpio_pin_sel=%llu", RCSwitch->nReceiverInterrupt, gpio_pin_sel);
 
-#if 1
 	// Configure the data input
 	gpio_config_t io_conf = {
 		.intr_type = GPIO_INTR_ANYEDGE,
@@ -397,28 +397,14 @@ void enableReceiveInternal(RCSWITCH_t * RCSwitch) {
 		.pull_down_en = GPIO_PULLDOWN_DISABLE
 	};
 	gpio_config(&io_conf);
-#endif
-
-#if 0
-	//zero-initialize the config structure.
-	gpio_config_t io_conf = {};
-	//disable pull-down mode
-	io_conf.pull_down_en = GPIO_PULLDOWN_DISABLE;
-	//interrupt of rising edge
-	io_conf.intr_type = GPIO_INTR_ANYEDGE;
-	//bit mask of the pins
-	io_conf.pin_bit_mask = gpio_pin_sel;
-	//set as input mode
-	io_conf.mode = GPIO_MODE_INPUT;
-	//enable pull-up mode
-	io_conf.pull_up_en = GPIO_PULLUP_ENABLE;
-	gpio_config(&io_conf);
-#endif
 
 	//install gpio isr service
-	gpio_install_isr_service(ESP_INTR_FLAG_DEFAULT);
+	esp_err_t err = gpio_install_isr_service(ESP_INTR_FLAG_DEFAULT);
+	ESP_LOGI(TAG, "gpio_install_isr_service=%d", err);
 	//hook isr handler for specific gpio pin
-	gpio_isr_handler_add(RCSwitch->nReceiverInterrupt, handleInterrupt, RCSwitch);
+	err = gpio_isr_handler_add(RCSwitch->nReceiverInterrupt, handleInterrupt, RCSwitch);
+	ESP_LOGI(TAG, "gpio_isr_handler_add=%d", err);
+	return err;
 }
 
 /**
