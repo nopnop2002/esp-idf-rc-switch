@@ -127,6 +127,10 @@ I (30600) MAIN: Received 1761060 / 24bit Protocol: 1
 Some example project using USB Remote Control Switch.   
 https://github.com/nopnop2002/esp-idf-usb-switch
 
+# Known Limitations   
+This component uses GPIO interrupts.   
+It cannot be used at the same time as other components that use GPIO interrupts.   
+I tried using [this](https://components.espressif.com/components/espressif/esp32-camera) component at the same time, but it didn't work properly.   
 
 # How to use this component in your project   
 Create idf_component.yml in the same directory as main.c.   
