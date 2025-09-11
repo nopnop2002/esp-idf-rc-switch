@@ -65,7 +65,7 @@ static const Protocol proto[] = {
 //{pulseLength, {syncFactor.high, syncFactor.low}, {zero.high, zero.low}, {one.high, one.low}, invertedSignal}
 ```
 
-# Wirering
+# Wiring
 
 |Radio Module||ESP32|
 |:-:|:-:|:-:|
