@@ -101,7 +101,7 @@ https://github.com/nopnop2002/esp-idf-tea5767/tree/main/withGaradeDoorRemote
 # Using USB Remote Control Switch
 We can obtain products that turn USB on/off with a remote control about $4.   
 Both of these use a frequency of 433MHz radio signal.   
-Using these, you can turn on/off the USB device from the ESP32.   
+Using these, we can turn on/off the USB device from the ESP32.   
 The protocols, number of bits, and codes used differ depending on the product, so please check in advance.   
 You can use this project to find out what protocols, bit depths, and codes they use.   
 ![Image](https://github.com/user-attachments/assets/88d1a4d8-c98b-44c4-b589-0b053ff2534b)
@@ -126,6 +126,20 @@ I (30600) MAIN: Received 1761060 / 24bit Protocol: 1
 
 Some example project using USB Remote Control Switch.   
 https://github.com/nopnop2002/esp-idf-usb-switch
+
+# Using AC Socket Control Switch
+Wireless remote control socket switches are available for around $6.   
+Using this, we can turn on/off the AC socket from the ESP32.   
+The protocols, number of bits, and codes used differ depending on the product, so please check in advance.   
+You can use this project to find out what protocols, bit depths, and codes they use.   
+![Image](https://github.com/user-attachments/assets/810cf7db-0f6d-4833-a0a8-e579f0187af3)
+
+```
+I (6373) MAIN: Received 279330 / 24bit Protocol: 1
+I (6893) MAIN: Received 279330 / 24bit Protocol: 1
+I (8563) MAIN: Received 279332 / 24bit Protocol: 1
+I (8653) MAIN: Received 279332 / 24bit Protocol: 1
+```
 
 # Known Limitations   
 This component uses GPIO interrupts.   
