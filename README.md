@@ -117,6 +117,8 @@ I (6600) MAIN: Received 16065444 / 24bit Protocol: 1
 ```
 
 - Products on the right
+There are no separate ON and OFF codes.   
+It operates as a toggle using a single code.   
 ```
 I (30320) MAIN: Received 1761060 / 24bit Protocol: 1
 I (30410) MAIN: Received 1761060 / 24bit Protocol: 1
