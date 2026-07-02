@@ -108,23 +108,23 @@ You can use this project to find out what protocols, bit depths, and codes they 
 
 You can turn USB on/off by sending the same protocol, number of bits, and code.   
 - Products on the left   
-```
-I (5260) MAIN: Received 16065448 / 24bit Protocol: 1
-I (5360) MAIN: Received 16065448 / 24bit Protocol: 1
-I (6400) MAIN: Received 16065444 / 24bit Protocol: 1
-I (6500) MAIN: Received 16065444 / 24bit Protocol: 1
-I (6600) MAIN: Received 16065444 / 24bit Protocol: 1
-```
+	```
+	I (5260) MAIN: Received 16065448 / 24bit Protocol: 1
+	I (5360) MAIN: Received 16065448 / 24bit Protocol: 1
+	I (6400) MAIN: Received 16065444 / 24bit Protocol: 1
+	I (6500) MAIN: Received 16065444 / 24bit Protocol: 1
+	I (6600) MAIN: Received 16065444 / 24bit Protocol: 1
+	```
 
 - Products on the right   
-There are no separate ON and OFF codes.   
-It operates as a toggle using a single code.   
-```
-I (30320) MAIN: Received 1761060 / 24bit Protocol: 1
-I (30410) MAIN: Received 1761060 / 24bit Protocol: 1
-I (30500) MAIN: Received 1761060 / 24bit Protocol: 1
-I (30600) MAIN: Received 1761060 / 24bit Protocol: 1
-```
+	There are no separate ON and OFF codes.   
+	It operates as a toggle using a single code.   
+	```
+	I (30320) MAIN: Received 1761060 / 24bit Protocol: 1
+	I (30410) MAIN: Received 1761060 / 24bit Protocol: 1
+	I (30500) MAIN: Received 1761060 / 24bit Protocol: 1
+	I (30600) MAIN: Received 1761060 / 24bit Protocol: 1
+	```
 
 Some example project using USB Remote Control Switch.   
 https://github.com/nopnop2002/esp-idf-usb-switch
