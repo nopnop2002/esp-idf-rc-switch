@@ -131,9 +131,10 @@ https://github.com/nopnop2002/esp-idf-usb-switch
 Wireless remote control socket switches are available for around $6.   
 Using this, we can turn on/off the AC socket from the ESP32.   
 The protocols, number of bits, and codes used differ depending on the product, so please check in advance.   
-You can use this project to find out what protocols, bit depths, and codes they use.   
 ![Image](https://github.com/user-attachments/assets/810cf7db-0f6d-4833-a0a8-e579f0187af3)
 
+You can use this project to find out what protocols, bit depths, and codes they use.   
+And using this project, you can create a transmitter.   
 ```
 I (6373) MAIN: Received 279330 / 24bit Protocol: 1
 I (6893) MAIN: Received 279330 / 24bit Protocol: 1
