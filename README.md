@@ -76,14 +76,14 @@ static const Protocol proto[] = {
 __You can change data pin to any pin using menuconfig.__   
 
 
-# Communicat with Arduino Environment
+# Using Arduino Environment
 I used [this](https://github.com/sui77/rc-switch) library on Arduino environment.   
 The sample code for the Arduino environment can be found in the ArduinoCode folder.
 
-### From ESP32 to UNO
+### The Arduino environment acts as the receiver
 ![RCSwitch_Send](https://user-images.githubusercontent.com/6020549/125153827-5d7e5500-e191-11eb-8db9-accd41302b1f.jpg)
 
-### From UNO to ESP32
+### The ESP-IDF environment acts as the receiver
 ![RCSwitch_Receive](https://user-images.githubusercontent.com/6020549/125153829-60794580-e191-11eb-952e-65635b412ca8.jpg)
 
 # Using garage door 315/433MHz Remote
