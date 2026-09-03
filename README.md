@@ -75,9 +75,10 @@ static const Protocol proto[] = {
 
 __You can change data pin to any pin using menuconfig.__   
 
-
-# Using Arduino Environment
+# Communication with the Arduino Environment
 I used [this](https://github.com/sui77/rc-switch) library on Arduino environment.   
+Code sent from the Arduino Environment can be received by the ESP-IDF.   
+Code sent from the ESP-IDF can be received by the Arduino Environment.   
 The sample code for the Arduino environment can be found in the ArduinoCode folder.
 
 ### The Arduino environment acts as the receiver
