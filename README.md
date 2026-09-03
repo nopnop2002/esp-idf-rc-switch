@@ -137,7 +137,7 @@ The protocols, number of bits, and codes used differ depending on the product, s
 ![Image](https://github.com/user-attachments/assets/810cf7db-0f6d-4833-a0a8-e579f0187af3)
 
 You can use this project to find out what protocols, bit depths, and codes they use.   
-And using this project, you can create a transmitter.   
+You can toggle the AC power on and off by transmitting the same protocol, bit count, and code.   
 ```
 I (6373) MAIN: Received 279330 / 24bit Protocol: 1
 I (6893) MAIN: Received 279330 / 24bit Protocol: 1
